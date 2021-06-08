@@ -1,0 +1,51 @@
+{% extends "company/base.html" %}
+
+{% block content %}
+  
+
+
+<form method="POST" class="post-form" action="/company/benchupdate/{{benchresource.id}}">  
+  {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Firstname</label>  
+<div class="col-sm-4">  
+  <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ benchresource.firstname }}"/>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Last Name:</label>  
+<div class="col-sm-4">  
+  <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{ benchresource.lastname }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Email:</label>  
+<div class="col-sm-4">  
+  <input type="email" name="eemail" id="id_eemail" required maxlength="254" value="{{ benchresource.email }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Mobile:</label>  
+<div class="col-sm-4">  
+  <input type="text" name="econtact" id="id_econtact" required maxlength="15" value="{{ benchresource.mobile }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-success">Update</button>  
+</div>  
+</div>  
+</div>  
+</form>  
+
+
+{% endblock content %}
